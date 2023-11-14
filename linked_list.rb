@@ -115,6 +115,30 @@ class LinkedList
         end
     end
 
+    def remove_at(index)
+        return nil if index < 0 || index >= @size
+        if index == @size - 1
+            return pop()
+        else
+            node = @head
+            if index == 0
+                @head = @head.next_node
+            else
+                cur_index = 0
+                ancestor = node
+                while cur_index + 1 != index do
+                    cur_index += 1
+                    ancestor = ancestor.next_node
+                end
+                node = ancestor.next_node
+                ancestor.next_node = node.next_node
+            end
+            @size -= 1
+            return node.value
+        end
+    end
+
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
