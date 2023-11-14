@@ -14,4 +14,15 @@ class LinkedList
         @tail = nil
         @size = 0
     end
+
+    def append(value)
+        new_node = Node.new(value)
+        if @size == 0
+            @head = @tail = new_node
+        else
+            @tail.next_node = new_node
+            @tail = new_node
+        end
+        @size += 1
+    end
 end
