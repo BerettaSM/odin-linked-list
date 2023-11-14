@@ -5,6 +5,10 @@ class Node
         @value = value
         @next_node = next_node
     end
+
+    def inspect
+        "#{@value}"
+    end
 end
 
 
@@ -24,5 +28,9 @@ class LinkedList
             @tail = new_node
         end
         @size += 1
+    end
+
+    def inspect
+        "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
 end
