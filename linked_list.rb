@@ -63,4 +63,15 @@ class LinkedList
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
+
+    def to_s
+        return "LinkedList ()" if @size == 0
+        node = @head
+        string = "LinkedList"
+        while !node.nil?
+            string += " => (#{node.value})"
+            node = node.next_node
+        end
+        string
+    end
 end
