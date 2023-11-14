@@ -41,6 +41,10 @@ class LinkedList
         @size += 1
     end
 
+    def size
+        @size
+    end
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
