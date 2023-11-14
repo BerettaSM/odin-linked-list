@@ -60,6 +60,25 @@ class LinkedList
         node
     end
 
+    def pop
+        if @size == 0
+            return nil
+        else
+            popped = @head
+            if @head == @tail
+                @head = @tail = nil
+            else
+                node = popped
+                (node = node.next_node) while node.next_node != @tail
+                node.next_node = nil
+                popped = @tail
+                @tail = node
+            end
+            @size -= 1
+            return popped.value
+        end
+    end
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
