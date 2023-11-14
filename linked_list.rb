@@ -86,6 +86,16 @@ class LinkedList
         node.value == value
     end
 
+    def find(value)
+        index = 0
+        node = @head
+        while !node.nil? && node.value != value do
+            node = node.next_node
+            index += 1
+        end
+        index < @size ? index : nil
+    end
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
