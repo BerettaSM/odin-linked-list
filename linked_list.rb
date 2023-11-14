@@ -101,13 +101,13 @@ class LinkedList
     end
 
     def to_s
-        return "LinkedList ()" if @size == 0
-        node = @head
         string = "LinkedList"
+        node = @head
         while !node.nil?
-            string += " => (#{node.value})"
+            string += " -> ( #{node.value} )"
             node = node.next_node
         end
+        string += " -> nil"
         string
     end
 end
