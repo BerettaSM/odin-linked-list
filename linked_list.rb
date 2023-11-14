@@ -53,6 +53,13 @@ class LinkedList
         @tail
     end
 
+    def at(index)
+        return nil if index < 0 || index > @size
+        node = @head
+        (index).times { node = node.next_node }
+        node
+    end
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
