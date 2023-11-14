@@ -7,7 +7,7 @@ class Node
     end
 
     def inspect
-        "#{@value}"
+        "Node ( #{@value} )"
     end
 end
 
@@ -26,6 +26,17 @@ class LinkedList
         else
             @tail.next_node = new_node
             @tail = new_node
+        end
+        @size += 1
+    end
+
+    def prepend(value)
+        new_node = Node.new(value)
+        if @size == 0
+            @head = @tail = new_node
+        else
+            new_node.next_node = @head
+            @head = new_node
         end
         @size += 1
     end
