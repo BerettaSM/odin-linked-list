@@ -19,6 +19,18 @@ class LinkedList
         @size = 0
     end
 
+    def size
+        @size
+    end
+
+    def head
+        @head
+    end
+
+    def tail
+        @tail
+    end
+
     def append(value)
         new_node = Node.new(value)
         if @size == 0
@@ -39,18 +51,6 @@ class LinkedList
             @head = new_node
         end
         @size += 1
-    end
-
-    def size
-        @size
-    end
-
-    def head
-        @head
-    end
-
-    def tail
-        @tail
     end
 
     def at(index)
