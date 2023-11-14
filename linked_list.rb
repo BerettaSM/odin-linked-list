@@ -79,6 +79,13 @@ class LinkedList
         end
     end
 
+    def contains?(value)
+        return false if @size == 0
+        node = @head
+        (node = node.next_node) while !node.next_node.nil? && node.value != value
+        node.value == value
+    end
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
