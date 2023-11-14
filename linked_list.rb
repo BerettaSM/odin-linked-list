@@ -96,6 +96,25 @@ class LinkedList
         index < @size ? index : nil
     end
 
+    def insert_at(value, index)
+        new_node = Node.new(value)
+        if index <= 0
+            prepend(value)
+        elsif index >= @size
+            append(value)
+        else
+            cur_index = 1
+            node = @head
+            while cur_index != index do
+                cur_index += 1
+                node = node.next_node
+            end
+            new_node.next_node = node.next_node
+            node.next_node = new_node
+            @size += 1
+        end
+    end
+
     def inspect
         "LinkedList ( head = #{@head.inspect}, tail = #{@tail.inspect}, size = #{@size.inspect} )"
     end
